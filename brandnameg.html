@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Name Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff8f5;
+            text-align: center;
+            padding: 50px;
+            color: #444;
+        }
+
+        h1 {
+            color: #e8845a;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        #result {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            background-color: #ffe8dc;
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            min-width: 300px;
+        }
+
+        button {
+            background-color: #e8845a;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #d4704a;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Brand Name Generator</h1>
+    <p>Click the button to generate a random brand name!</p>
+
+    <div id="result">Click below!</div>
+    <br>
+    <button onclick="generateName()">Generate Name</button>
+
+    <script>
+        function generateName() {
+            let rand = Math.random()
+            let first, second, third;
+
+            // lets generate 1st word
+            if(rand < 0.33){
+                first = "Tech"
+            }
+            else if(rand < 0.66){
+                first = "Info"
+            }
+            else{
+                first = "Data"
+            }
+
+            // lets generate 2nd word
+            rand = Math.random()
+            if(rand < 0.33){
+                second = "Soft"
+            }
+            else if(rand < 0.66){
+                second = "Sys"
+            }
+            else{
+                second = "Ware"
+            }
+
+            // lets generate 3rd word
+            rand = Math.random()
+            if(rand < 0.33){
+                third = "Solutions"
+            }
+            else if(rand < 0.66){
+                third = "crazy"
+            }
+            else{
+                third = "Corp"
+            }
+
+            document.getElementById("result").textContent = `${first} ${second} ${third}`
+            console.log(`${first} ${second} ${third}`)
+        }
+    </script>
+
+</body>
+</html>
